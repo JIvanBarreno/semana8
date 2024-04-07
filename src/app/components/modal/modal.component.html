@@ -1,0 +1,13 @@
+<div class="modal-puppy">
+    <h2 mat-dialog-title>{{msg}}</h2>
+    <mat-dialog-content>
+        De click en si, si desea agregar una nueva mascota.
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button mat-button mat-dialog-close (click)="closeModal()">No</button>
+        <button 
+            mat-button mat-dialog-close cdkFocusInitial 
+            [mat-dialog-close]="true"
+        >Sí</button>
+    </mat-dialog-actions>
+</div>

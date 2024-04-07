@@ -1,0 +1,29 @@
+<form class="example-form">
+    <div class="popy-name">
+        <mat-form-field class="example-form-field">
+            <mat-label>
+                <mat-icon>
+                    <span class="material-symbols-outlined">
+                        add_circle
+                        </span>
+                </mat-icon>
+                Nombre Mascota</mat-label>
+            <input matInput type="text" [(ngModel)]="value" [ngModelOptions]="{standalone: true}" >
+            @if (value) {
+                <button matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                    <mat-icon>close</mat-icon>
+                </button>
+            }
+        </mat-form-field>
+    </div>
+    <div class="puppy-type">
+        <mat-radio-group aria-label="Seleccione una opcion" [formControl]="puppyType">
+            @for (p of puppyTypeDesc; track $index) {
+                <mat-radio-button value="{{p.type}}" class="type-item">{{p.description}}</mat-radio-button>
+            }
+        </mat-radio-group>
+    </div>
+    <div class="save-puppy">
+        <button mat-raised-button (click)="openDialog('500ms', '400ms')">Agregar Mascota</button>
+    </div>
+</form>

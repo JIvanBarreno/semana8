@@ -1,0 +1,15 @@
+.data {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+    border: solid 3px rgb(2, 0, 90);
+    padding: 5px;
+    margin: auto;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgb(1, 70, 70);
+    background: linear-gradient(45deg, rgba(1, 70, 70, 1) 0%, rgba(9,9,121,1) 23%, rgba(113,6,6,1) 100%);
+    border-radius: 15px;
+}
