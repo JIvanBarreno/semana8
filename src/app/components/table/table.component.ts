@@ -13,7 +13,7 @@ import { ShareDataService } from '../../servises/share-data.service';
   styleUrl: './table.component.scss'
 })
 export class TableComponent implements OnInit {
-  puppyData: Puppy [] = [];
+  puppyData: Array<Puppy> = [];
   displayedColumns: string[] = ['name', 'type'];
   dataSource = new MatTableDataSource(this.puppyData);
   private puppyService = inject(ShareDataService);
@@ -25,9 +25,9 @@ export class TableComponent implements OnInit {
 
   ngOnInit(): void {
     this.puppyService.currentPuppy.subscribe(pp => {
-      this.puppyData.push(pp);
+      this.puppyData = pp;
       this.dataSource = new MatTableDataSource(this.puppyData);
-      //console.log("from my table component " + pp.getName());
+      //console.log("from my table component " + pp);
     });
-}
+  }
 }

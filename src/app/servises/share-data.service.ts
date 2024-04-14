@@ -6,12 +6,15 @@ import { Puppy } from '../../models/puppydata.model';
   providedIn: 'root'
 })
 export class ShareDataService {
-  private sharePuppy = new BehaviorSubject<Puppy>(new Puppy('', ''));
+  private sharePuppy = new BehaviorSubject<Array<Puppy>>([]);
   currentPuppy = this.sharePuppy.asObservable();
   
   constructor() { }
 
   changePuppy(puppy: Puppy) {
-    this.sharePuppy.next(puppy);
+    let arrayPuppy: Array<Puppy> = this.sharePuppy.getValue();
+    arrayPuppy.push(puppy);
+
+    this.sharePuppy.next(arrayPuppy);
   }
 }
